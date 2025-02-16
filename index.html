@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Joya Das</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation Menu -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#Project">Project</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Home Section -->
+  <div class="home-container" id="home">
+    <img src="images/my_pic.jpg" alt="Your Profile Picture" class="profile-pic">
+    <div class="intro-text">
+      <h1 class="name">Joya Das</h1>
+      <h2 class="about-heading">A Bit About Me</h2>
+      <p class="about-text">
+         I am a  student with a keen interest in web development and technology. I am currently learning HTML, CSS, and JavaScript to create interactive and visually appealing websites. My passion lies in designing and building projects that reflect creativity and functionality.<br>
+         Outside of studies, I enjoy exploring new ideas, experimenting with creative designs, and expanding my knowledge in different areas of technology. My ambition is to continuously grow, improve my skills, and contribute to innovative projects in the future.
+      </p>
+    </div>
+  </div>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+        <div class="edu-item">
+            <i class="fas fa-university icon"></i>
+            <h3>B.Sc in Computer Science & Engineering</h3>
+            <p><strong>University:</strong> Premier University</p>
+            <p><strong>Year:</strong> 2023 - Present</p>
+        </div>
+        <div class="edu-item">
+            <i class="fas fa-school icon"></i>
+            <h3>Higher Secondary Certificate (HSC)</h3>
+            <p><strong>College:</strong> St. Scholastica's Girl's College</p>
+            <p><strong>Year:</strong> 2020 - 2022</p>
+        </div>
+        <div class="edu-item">
+            <i class="fas fa-book-open icon"></i>
+            <h3>Secondary School Certificate (SSC)</h3>
+            <p><strong>School:</strong> Housing and Settlement Public School</p>
+            <p><strong>Year:</strong> 2018 - 2020</p>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                window.scrollTo({
+                    top: targetSection.offsetTop - 50,
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
+
+  <!-- Gallery Section -->
+  <div id="gallery" class="page">
+    <div class="gallery">
+      <img src="images/pic1.jpg" alt="Picture 1">
+      <img src="images/pic2.jpg" alt="Picture 2">
+      <img src="images/pic3.jpg" alt="Picture 3">
+      <img src="images/pic4.jpg" alt="Picture 4">
+      <img src="images/pic5.jpg" alt="Picture 5">
+      <img src="images/pic6.jpg" alt="Picture 6">
+      <img src="images/pic7.jpg" alt="Picture 7">
+      <img src="images/pic8.jpg" alt="Picture 8">
+      <img src="images/pic9.jpg" alt="Picture 9">
+      <img src="images/pic10.jpg" alt="Picture 10">
+    </div>
+  </div>
+<!-- Skill Section -->
+  <div id="skills" class="skills-container">
+    <h3>Skills</h3>
+
+    <div class="skill" onclick="toggleDetails('htmlDetails')">
+      <span class="skill-name">HTML</span>
+      <div class="progress-bar">
+        <div class="bar" style="width: 90%; background-color: orange;">
+          <span class="percentage">90%</span>
+        </div>
+      </div>
+      <div id="htmlDetails" style="display: none;">HTML is used for structuring web pages.</div>
+    </div>
+
+    <div class="skill" onclick="toggleDetails('cssDetails')">
+      <span class="skill-name">CSS</span>
+      <div class="progress-bar">
+        <div class="bar" style="width: 80%; background-color: blue;">
+          <span class="percentage">80%</span>
+        </div>
+      </div>
+      <div id="cssDetails" style="display: none;">CSS is used for styling web pages.</div>
+    </div>
+
+    <div class="skill" onclick="toggleDetails('jsDetails')">
+      <span class="skill-name">JavaScript</span>
+      <div class="progress-bar">
+        <div class="bar" style="width: 75%; background-color: yellow;">
+          <span class="percentage">75%</span>
+        </div>
+      </div>
+      <div id="jsDetails" style="display: none;">JavaScript is used for adding interactivity to web pages.</div>
+    </div>
+
+    <div class="skill" onclick="toggleDetails('pythonDetails')">
+      <span class="skill-name">Python</span>
+      <div class="progress-bar">
+        <div class="bar" style="width: 85%; background-color: green;">
+          <span class="percentage">85%</span>
+        </div>
+      </div>
+      <div id="pythonDetails" style="display: none;">Python is used for general-purpose programming.</div>
+    </div>
+  </div>
+<!-- Poject Section -->
+<div id="Project" class="page">
+  <!-- Project 1: Calculator -->
+  <div class="project">
+    <h3>Project 1: Calculator</h3>
+    <p>A basic calculator to perform addition, subtraction, multiplication, and division.</p>
+    <button onclick="openCalculator()">Preview</button>
+  </div>
+  <!-- Project 2: Interactive Light Bulb -->
+  <div class="project">
+    <h3>Project 2: Interactive Light Bulb </h3>
+    <p>An interactive tool to turn a virtual light bulb on and off using buttons.</p>
+    <img id="lightbulb-on" src="images/bulb-on.jpg" alt="Bulb On" width="150" style="display:none;">
+    <img id="lightbulb-off" src="images/bulb-off.jpg" alt="Bulb Off" width="150" style="display:none;">
+    <br>
+    <button onclick="openInteractiveLightBulb()">Preview</button>
+  </div>
+
+  <!-- Project 3: Digital Clock -->
+  <div class="project">
+    <h3>Project 3: Digital Clock</h3>
+    <p>A live digital clock displaying the current time.</p>
+    <button onclick="openClock()">Preview</button>
+  </div>
+</div>
+
+   <!-- Contact Section -->
+  <div id="contact" class="page">    
+            <div class="contact-left">
+                <h2>Contact Me</h2>
+                <p>Email: <a href="mailto:joyadas370@gmail.com">joyadas370@gmail.com</a></p>
+                <p>Phone: <a href="tel:01533936942">01533936942</a></p>
+                <div class="social-icons">
+                    <a href="#" target="_blank"><img src="images/facebook.jpg" alt="Facebook"></a>
+                    <a href="#" target="_blank"><img src="images/instagram.jpg" alt="Instagram"></a>
+                    <a href="#" target="_blank"><img src="images/linkdin.jpg" alt="Linkdin"></a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form class="contact-form" action="#" method="post">
+                    <input type="text" name="name" placeholder="Enter Your Name" required>
+                    <input type="email" name="email" placeholder="Enter Your Email" required>
+                    <input type="text" name="subject" placeholder="Enter Your Subject" required>
+                    <textarea name="message" rows="4" placeholder="Enter Your Message" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+              </div>     
+    
+  <!-- Placeholder Sections -->
+  <script src="scripts.js"></script>
+</body>
+</html>
